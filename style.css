@@ -11,7 +11,7 @@
 
 /*ini memanggil tag langsung */
 p {
-    color: purple;
+    color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -67,7 +67,7 @@ p {
 }
 
 .kardus {
-    width: 400px;
+    width: 100dvw;
     height: 300px;
     /* background-color: darkgoldenrod; */
     border: 1px black solid;
@@ -75,21 +75,25 @@ p {
 }
 
 .televisi {
-    display: inline-table;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    background-color: #ff0;
+    /* justify-content: center;
+    align-items: center; */
     border: 1px black solid;
     width: 150px;
     padding: 10px;
     margin: 10px;
+    float: left;
 }
 
 .container{
     width: 100dvw;
+    height: 30dvh;
     background-color: 
     rgb(12, 196, 196);
     padding: 10px;
-    margin: 20px;
+    margin: 10px;
+    margin-bottom: 20px;
 }
 
 .d-block span{
@@ -123,4 +127,82 @@ p {
 
 .d-inline-block .hidden{
     visibility: hidden;
+}
+
+.box{
+    width: 100px;
+    height: 60px;
+    background-color: blueviolet;
+    border: 1px black solid;
+}
+
+/* ngikutin default, tapi kalau di ubah sendiri bakal ngikut (numpuk)*/
+.relative{
+    position: relative;
+    top: 30px;
+    left: 40px;
+    background-color: burlywood;
+}
+
+/* dia hanya akan mengikuti dari 
+elemen yg memiliki position relative,
+jika tidak ada maka akan ikut ke body */
+.container-absolut{
+    position: relative;
+}
+
+.absolut{
+    position: absolute;
+    top:40px;
+    left: 70%;
+    background: orange;
+}
+
+.area-fix{
+    width: 50px;
+    height: 50px;
+    left: 85%;
+    bottom: 30px;
+    border-radius: 100%;
+    text-align:center;
+    color: aliceblue;
+    justify-content: center;
+    background-color: gray;
+    position: fixed;
+}
+
+.sticky{
+    position: sticky;
+    width: 100dvw;
+    top: 0;
+    bottom: 0;
+    background-color: yellowgreen;
+}
+
+.flex-box{
+    width: 100dvw;
+    min-height: 20dvw;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    /* untuk membuat elemen responsif
+    agar elemen card pindah ke bawah
+    menyesuaikan layar */
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.card{
+    flex: 1 1 200px;
+    /* artinya
+    - flex grow : mengizinkan mengembang di ruang kosong
+    - flex shrink : menyusut ketika ruang menyempit
+    - flex basis : ukuran asli
+    
+    kunci agar responsif
+    */
+    width: 200px;
+    height: 80px;
+    margin: 10px;
+    background-color: rgb(147, 179, 238);
 }
