@@ -1,0 +1,126 @@
+/* ini memangil class */
+* body{
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkred;
+}
+
+/*ini memanggil tag langsung */
+p {
+    color: purple;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* ini memanggil dengan ID */
+#iniId {
+    color: green;
+}
+
+/* ini selektor kombinasi */
+.Bola-1,
+.Bola-2,
+.Bola-3 {
+    width: 70px;
+    height: 70px;
+    background: #ff0;
+    border-radius: 100%;
+}
+
+/* selektor keturunan */
+.header .judul {
+    font-weight: bold;
+}
+
+/* ini psudoclass hover */
+.judul:hover {
+    color: chocolate;
+}
+
+.judul {
+    width: fit-content;
+    /* background-color: #ff0; */
+    cursor: grab;
+}
+
+.Bola {
+    width: 70px;
+    height: 70px;
+    background: #ff0;
+    border-radius: 100%;
+}
+
+/* untuk memilih elemen pertama pada anak classnya */
+/* first child -> urutan pertama */
+/* last child -> urutan terakhir */
+/* nth-child() -> memilih urutan */
+/* nth-child(odd) -> memilih elemen ganjild */
+.kotak .Bola:nth-child(odd) {
+    background-color: aqua;
+}
+
+.kotak {
+    margin-bottom: 30px;
+}
+
+.kardus {
+    width: 400px;
+    height: 300px;
+    /* background-color: darkgoldenrod; */
+    border: 1px black solid;
+    margin-bottom: 20px;
+}
+
+.televisi {
+    display: inline-table;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.container{
+    width: 100dvw;
+    background-color: 
+    rgb(12, 196, 196);
+    padding: 10px;
+    margin: 20px;
+}
+
+.d-block span{
+    padding: 10px;
+    background-color: antiquewhite;
+    margin: 10px;
+    /* ini gunanya untuk buat elemen kita jadi menguasai sebaris halaman */
+    display: block;
+}
+
+.d-inline span{
+    padding: 10px;
+    background-color: antiquewhite;
+    margin: 10px;
+    /* ini gunanya untuk buat elemen kita jadi menguasai sebaris halaman tetapi menyamping*/
+    display: inline;
+    /* note : ukuran elemen tidak bisa di atur */
+}
+
+.d-inline-block span{
+    padding: 10px;
+    background-color: antiquewhite;
+    margin: 10px;
+    /* ini gabungan dari block dengan inline, menyamping tapi bisa di atur ukurannya */
+    display: inline-block;
+}
+
+.d-inline-block .none{
+    display: none;
+}
+
+.d-inline-block .hidden{
+    visibility: hidden;
+}

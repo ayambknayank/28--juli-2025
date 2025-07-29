@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .text-paragraph {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: blue;
+      }
+
+      .kotak {
+        width: 400px;
+        height: 400px;
+        background: slateblue;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .Bola-1,
+      .Bola-2,
+      .Bola-3 {
+        width: 70px;
+        height: 70px;
+        background: #ff0;
+        border-radius: 100%;
+        margin: 30px;
+      }
+    </style>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 style="color: rgb(6, 90, 90)">Hello CSS</h1>
+
+    <p class="text-paragraph">ini pakai CSS internal</p>
+
+    <p>Ini dia pakai CSS tag langsung</p>
+
+    <p class="title">Ini dari CSS Eksternal</p>
+
+    <p id="iniId">Ini dari CSS yg pakai Id</p>
+
+    <div class="kotak">
+      <div class="Bola"></div>
+      <div class="Bola"></div>
+      <div class="Bola"></div>
+    </div>
+
+    <div class="header">
+      <div class="judul">ini class nya header -> judul</div>
+    </div>
+
+    <div class="content">
+      <div class="judul">ini class nya content -> judul</div>
+    </div>
+
+    <div class="kotak">
+      <div class="Bola"></div>
+      <div class="Bola"></div>
+      <div class="Bola"></div>
+      <div class="Bola"></div>
+    </div>
+
+    <div class="kardus">
+      <div class="televisi">
+        <img
+          src="https://www.1800gotjunk.com/sites/default/files/gj-google-image-extension-1200x1200-tv.jpg"
+          alt=""
+          width="100"
+          style="mix-blend-mode: multiply"
+        />
+      </div>
+      <div class="televisi">
+        <img
+          src="https://www.1800gotjunk.com/sites/default/files/gj-google-image-extension-1200x1200-tv.jpg"
+          alt=""
+          width="100"
+          style="mix-blend-mode: multiply"
+        />
+      </div>
+      <div class="televisi">
+        <img
+          src="https://www.1800gotjunk.com/sites/default/files/gj-google-image-extension-1200x1200-tv.jpg"
+          alt=""
+          width="100"
+          style="mix-blend-mode: multiply"
+        />
+      </div>
+      <div class="televisi">
+        <img
+          src="https://www.1800gotjunk.com/sites/default/files/gj-google-image-extension-1200x1200-tv.jpg"
+          alt=""
+          width="100"
+          style="mix-blend-mode: multiply"
+        />
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="d-block">
+            <span class="">ini adalah display block</span>
+            <span class="">ini adalah display block</span>
+            <span class="">ini adalah display block</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="d-inline">
+            <span class="">ini adalah display inline</span>
+            <span class="">ini adalah display inline</span>
+            <span class="">ini adalah display inline</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="d-inline-block">
+            <span class="">ini adalah display inline block</span>
+            <span class="hidden">ini adalah display none</span>
+            <span class="none">ini adalah display hidden</span>
+            <span class="hidden">ini adalah display inline block</span>
+            <span class="">ini adalah display inline block</span>
+        </div>
+    </div>
+  </body>
+</html>
