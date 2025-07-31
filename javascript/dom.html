@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - Document Object Model</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 100dvw;
+        height: 100dvh;
+        background-color: white;
+      }
+      .hero {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn-biru {
+        padding: 20px 40px;
+        margin: 20px;
+        background-color: tomato;
+        border: 1px black solid;
+      }
+      .status {
+        width: 80%;
+        background-color: blanchedalmond;
+        text-align: center;
+        padding: 30px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero">
+        <button type="button" class="btn-biru" id="btn-click">klik</button>
+        <div class="status" id="status">tombol belum di klik</div>
+        <button type="button" onclick="resetlah()">reset</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero">
+        <h1 id="herotitle">Judul Hero</h1>
+        <p id="sub-title">Ini adalah Subtitle</p>
+        <p class="paragraf">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
+          dolorem!
+        </p>
+        <img src="" alt="" id="gambar" />
+        <div id="gambarBaru"></div>
+      </div>
+    </div>
+
+    <script>
+      // mengakses sebuah elemen
+      //mengambil elemen Id
+      const judul = document.getElementById("herotitle");
+      console.log(judul);
+
+      //mengambil elemen dengan class
+      const paragraf = document.querySelector(".paragraf");
+      console.log(paragraf);
+
+      //mengambil gambar
+      const gambar = document.getElementById("gambar");
+
+      // membuat elemen baru
+      const baru = document.createElement("h1");
+      const gambarBaru = document.getElementById("gambarBaru");
+      baru.textContent = "ini adalah elemen baru";
+      // console.log(baru);
+      gambarBaru.appendChild(baru);
+
+      //mengubah text (hanaya pada tag yang punya buka tutup)
+      judul.textContent = "Ini Adalah Web DOM";
+
+      //mengubah style
+      paragraf.style.background = "aqua";
+      paragraf.style.padding = "10px";
+
+      // menambahkan atau mengubah atribut
+      gambar.setAttribute(
+        "src",
+        "https://media.istockphoto.com/id/1973365581/vector/sample-ink-rubber-stamp.jpg?s=612x612&w=0&k=20&c=_m6hNbFtLdulg3LK5LRjJiH6boCb_gcxPvRLytIz0Ws="
+      );
+      gambar.setAttribute("width", "200px");
+
+      const buttonClick = document.getElementById("btn-click");
+      const areaStatus = document.getElementById("status");
+
+      buttonClick.addEventListener("click", function () {
+        areaStatus.textContent = "tombol berhasil di klik";
+        areaStatus.style.background = "#00ff0070";
+      });
+
+      areaStatus.addEventListener('keypress', function(event){
+        if(event.key === 'enter'){
+            // areaStatus.style.background = '#2222';
+            resetlah();
+        }
+      })
+
+      function resetlah() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

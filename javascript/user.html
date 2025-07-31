@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Kartu Nama</title>
+    <style>
+      /* google font */
+      @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Rowdies:wght@300;400;700&display=swap");
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      .navbar {
+        width: 100dvw;
+        height: 50px;
+        background-color: bisque;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* color: azure; */
+      }
+      /* .dancing-script-logo {
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: 20px;
+        font-style: normal;
+      } */
+
+      .dancing-script-kok {
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: 20px;
+        font-style: normal;
+      }
+      .rowdies-regular {
+        font-family: "Rowdies", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+      .ava {
+        margin-right: 10px;
+      }
+
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0px;
+      }
+      .container-card {
+        width: 100%;
+        min-height: 20dvh;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        /* margin: 20px 10px; */
+        /* padding: 20px 10px; */
+        background-color: rgb(245, 235, 222);
+      }
+      .card{
+        width: 20%;
+        background: #ffff;
+        border: #222 solid 1px;
+        margin: 10px;
+        padding: 20px 10px;
+        border-radius: 10%;
+        justify-content: center;
+        align-items: center;
+      }
+      .card:hover{
+        background-color: #c5c3c350;
+        transform: translateY(-10);
+        transition: 2 ease-in-out;
+
+      }
+      .image{
+        width: 60px;
+        border-radius: 50%;
+      }
+      .age{
+        font-weight: bold;
+      }
+    </style>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <i data-feather="user" class="ava"></i>
+      <h3 class="logo dancing-script-kok rowdies-regular">Daftar Peserta</h3>
+    </nav>
+    
+    <script>
+      feather.replace();
+    </script>
+
+    <div class="container">
+      <h3>Daftar nama Teman</h3>
+    </div>
+
+    <p id="loading">wait...</p>
+
+    <div class="container-card" id="containerCard"></div>
+
+    
+
+    <script>
+      const containerCard = document.getElementById("containerCard");
+      const loadingText = document.getElementById("loading");
+
+      async function tampilkanData() {
+        try {
+          loadingText.textContent = "sedang membaca data...";
+          loadingText.style.display = "block";
+
+          //url API
+          const api = "https://688b120a2a52cabb9f4fe9be.mockapi.io/users";
+          const response = await fetch(api);
+
+          // kondisi ketika gagal memuat data
+          if (!response.ok) {
+            console.log("error");
+            throw new Error(`HTTP bermasalah : ${response.status}`);
+          }
+
+          //mengambil data baru dari respon
+          const dataUser = await response.json();
+          loadingText.style.display = "none";
+
+          console.log(dataUser);
+
+          dataUser.forEach((item) => {
+
+            //memanggil data di dalam console 
+            //ini artinya
+
+            //membuat elemen dan memasukkan ke dalam card
+            const card = document.createElement('div');
+            //menambahkan atribut class dengan nama card
+            card.setAttribute('class', 'card');
+
+
+            const nama = document.createElement('h3');
+            nama.setAttribute('class', 'nama');
+            // menampilkan text dari data ke halaman web
+            nama.textContent = item.name; //mengambil data dengan item.(data) / item[data]
+
+            const city = document.createElement('p');
+            city.setAttribute('class', 'citi');
+            city.textContent = item.city;
+
+            const age = document.createElement('p');
+            age.setAttribute('class', 'age');
+            age.textContent = item.age;
+
+            const image = document.createElement('img');
+            image.setAttribute('class', 'image');
+            image.setAttribute('src', item.avatar);
+            image.setAttribute('width', 90);
+            age.textContent = item.age;
+
+
+
+            // agar terlihat di dalam web
+            card.appendChild(image);
+            containerCard.appendChild(card);
+            card.appendChild(nama);
+            card.appendChild(city);
+            card.appendChild(age);
+          })
+
+        } catch (error){}
+      }
+
+      // menjalankan function a sync
+      tampilkanData();
+    </script>
+  </body>
+</html>

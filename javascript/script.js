@@ -207,44 +207,31 @@ function sayHello() {
   alert("ini pop up nya");
 }
 
-//arrow function 
+//arrow function
 const persegi = () => {
-  console.log('ini arrow function => persegi');
-}
+  console.log("ini arrow function => persegi");
+};
 
 //expression
-const luasPersegi = () => alert('berapa ya luasnya??');
+const luasPersegi = () => alert("berapa ya luasnya??");
 
-//proses
-let waktu = 'pagi';
-let namakuu = document.getElementById("namaku");
-console.log('ini paling akhir');
-console.log(namakuu);
-function sapadong(nama, waktu){
-
-  console.log(`selamat ${waktu} Mr.${nama}`);
+//Sapa dong
+let waktu = "pagi";
+console.log("ini paling akhir");
+function sapadong() {
+  let namaku = document.getElementById("namaku").value;
+  alert(`selamat ${waktu} Mr.${namaku}`);
+  // console.log(`selamat ${waktu} Mr.${namaku}`);
 }
 
 //challange
 const phii = 3.14;
-function luasLingkaran(jari){
-  let rumusLuasLingkaran = phii * (jari**2);
+function luasLingkaran(jari) {
+  let rumusLuasLingkaran = phii * jari ** 2;
   return rumusLuasLingkaran;
 }
 let iniLuasLingkaran = luasLingkaran(14);
-console.log('luas lingkaran itu adalah = ', iniLuasLingkaran);
-
-
-
-
-
-
-
-
-
-
-
-
+console.log("luas lingkaran itu adalah = ", iniLuasLingkaran);
 
 //====================================================================================
 
