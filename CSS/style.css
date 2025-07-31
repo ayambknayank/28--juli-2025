@@ -83,7 +83,8 @@ p {
     width: 150px;
     padding: 10px;
     margin: 10px;
-    float: left;
+    float: right;
+    animation: tipi 1s infinite alternate;
 }
 
 .container{
@@ -182,7 +183,8 @@ jika tidak ada maka akan ikut ke body */
 .flex-box{
     width: 100dvw;
     min-height: 20dvw;
-    background-color: aliceblue;
+    margin-bottom: 10px;
+    background-color: rgb(203, 203, 203);
     display: flex;
     align-items: center;
     /* untuk membuat elemen responsif
@@ -205,4 +207,64 @@ jika tidak ada maka akan ikut ke body */
     height: 80px;
     margin: 10px;
     background-color: rgb(147, 179, 238);
+    animation: loncat .5s infinite alternate;
+}
+
+.grid-container{
+    width: 100dvw;
+    min-height: 20dvh;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+}
+
+.grid-item{
+    background-color: aquamarine;
+    height: 150px;
+    padding: 20px;
+}
+
+/* 
+media queries
+yaitu fungsi yg berfungsi menyesuaikan 
+layar agar responsive
+*/
+
+/* ini ukuran tablet */
+@media screen and (max-width:768px) {
+    .card{
+        background: bisque;
+    }
+    .grid-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:425px){
+    .card{
+        background: greenyellow;
+    }
+    .grid-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@keyframes loncat {
+    from{
+        transform: translateY(0);
+    }to{
+        transform: translateY(-100px);
+        background: yellow;
+    }
+}
+
+@keyframes tipi{
+    0%{
+        background: blue;
+    }50%{
+        background: red;
+    }100%{
+        background: yellow;
+    }
 }
